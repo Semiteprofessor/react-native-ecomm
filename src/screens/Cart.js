@@ -37,6 +37,26 @@ const Cart = ({ navigation }) => {
       /> */}
       {/* {cartItems.length > 0 ? ( */}
       <>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <View
+            style={{
+              borderRadius: 50,
+              height: 30,
+              width: 30,
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "lightgray",
+              marginTop: 40,
+              marginBottom: 10,
+              marginLeft: 15,
+            }}>
+            <MaterialCommunityIcons
+              name="keyboard-backspace"
+              size={24}
+              style={{ color: "#7d1b78", fontWeight: "bold" }}
+            />
+          </View>
+        </TouchableOpacity>
         <View style={styles.screen}>
           <ScrollView style={styles.list}>
             {cartItems.map((productData) => (

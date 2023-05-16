@@ -12,9 +12,9 @@ import {
 import React, { useState, useContext } from "react";
 import { Dropdown } from "react-native-element-dropdown";
 import { TextInput } from "react-native-element-textinput";
-import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 
-const Card = () => {
+const Card = ({ navigation }) => {
   const [isFocus, setIsFocus] = useState(false);
 
   const data = [
@@ -39,6 +39,26 @@ const Card = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <View
+            style={{
+              borderRadius: 50,
+              height: 30,
+              width: 30,
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "lightgray",
+              marginTop: 40,
+              marginBottom: 10,
+              marginLeft: 15,
+            }}>
+            <MaterialCommunityIcons
+              name="keyboard-backspace"
+              size={24}
+              style={{ color: "#7d1b78", fontWeight: "bold" }}
+            />
+          </View>
+        </TouchableOpacity>
         <View
           style={{
             flexDirection: "row",
